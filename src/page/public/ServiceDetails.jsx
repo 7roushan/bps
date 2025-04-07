@@ -57,11 +57,11 @@ const ServiceDetails = () => {
             <Typography variant="subtitle1" mt={2} color="#808080">
               {service.descInsideTitle1}
             </Typography>
-            
+
             <img
-                      src={service.imgInside}
-                      style={{ width: "80%", height: 300,}}
-                    />
+              src={service.imgInside}
+              style={{ width: "80%", height: 300 }}
+            />
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle1" mt={2} color="#808080">
@@ -77,7 +77,6 @@ const ServiceDetails = () => {
             <Typography variant="subtitle1" mt={2} color="#808080">
               {service.descInsideId2}
             </Typography>
-            
           </Grid>
         </Grid>
       </Container>
