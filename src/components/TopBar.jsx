@@ -1,10 +1,8 @@
-
 // import React, { useState, useEffect } from "react";
 // import {
 //   AppBar,
 //   Box,
 //   IconButton,
-//   Stack,
 //   Typography,
 //   Toolbar,
 //   Container,
@@ -12,22 +10,18 @@
 //   useTheme,
 // } from "@mui/material";
 // import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import LinkedInIcon from "@mui/icons-material/LinkedIn";
 // import { useNavigate } from "react-router-dom";
 
 // function TopBar() {
 //   const navigate = useNavigate();
 //   const [scrolling, setScrolling] = useState(false);
+//     const [showHeader, setShowHeader] = useState(true);
 //   const theme = useTheme();
-//   const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Responsive check
-//   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm")); // Declare inside function
+//   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
 //   useEffect(() => {
 //     const handleScroll = () => {
-//       setScrolling(window.pageYOffset > 50);
+//       setScrolling(window.pageYOffset > 50); // you can adjust 50 to control sensitivity
 //     };
 //     window.addEventListener("scroll", handleScroll);
 //     return () => window.removeEventListener("scroll", handleScroll);
@@ -40,8 +34,8 @@
 //           position="static"
 //           sx={{
 //             backgroundColor: "white",
-//             p:2,
-            
+//             p: 0.8,
+//             transition: "all 0.1s ease-in-out",
 //           }}
 //         >
 //           <Container>
@@ -55,14 +49,20 @@
 //                 py: isMobile ? 1 : 0,
 //               }}
 //             >
-//               Logo Section
-//               <Box>
+//               {/* Logo */}
+//               <Box sx={{ textAlign: "center" }}>
 //                 <Typography
-//                   variant="h3"
+//                   variant="h1"
 //                   sx={{
-//                     height: isSmallScreen ? "30px" : "40px",
+//                     height: "40px",
 //                     color: "blue",
 //                     fontWeight: "bold",
+//                     fontSize: isMobile ? "1.8rem" : "2.2rem",
+//                     letterSpacing: "2px",
+//                     transition: "all 0.3s ease-in-out",
+//                     opacity: showHeader ? 1 : 0,
+//                     height: showHeader ? "auto" : 0,
+//                     overflow: "hidden",
 //                   }}
 //                 >
 //                   BPS
@@ -74,7 +74,6 @@
 //                 sx={{
 //                   display: "flex",
 //                   alignItems: "center",
-//                   justifyContent: "center", // Centers the content horizontally
 //                   gap: 1,
 //                 }}
 //               >
@@ -85,41 +84,23 @@
 //                   sx={{
 //                     display: "flex",
 //                     flexDirection: "column",
-//                     alignItems: "center",
+//                     alignItems: "flex-start",
 //                   }}
 //                 >
 //                   <Typography
 //                     variant="body2"
-//                     sx={{ color: "black", textAlign: "center" }}
+//                     sx={{ color: "black", fontWeight: "bold" }}
 //                   >
 //                     CALL US NOW
 //                   </Typography>
 //                   <Typography
 //                     variant="body2"
-//                     sx={{ color: "blue", textAlign: "center" }}
+//                     sx={{ color: "blue", fontWeight: "bold" }}
 //                   >
 //                     +91-6386963004
 //                   </Typography>
 //                 </Box>
-                
 //               </Box>
-              
-
-//               {/* Social Icons */}
-//               {/* <Stack direction="row" spacing={1} sx={{ mt: isMobile ? 1 : 0 }}>
-//                 <IconButton sx={{ color: "white" }}>
-//                   <FacebookIcon />
-//                 </IconButton>
-//                 <IconButton sx={{ color: "white" }}>
-//                   <InstagramIcon />
-//                 </IconButton>
-//                 <IconButton sx={{ color: "white" }}>
-//                   <TwitterIcon />
-//                 </IconButton>
-//                 <IconButton sx={{ color: "white" }}>
-//                   <LinkedInIcon />
-//                 </IconButton>
-//               </Stack> */}
 //             </Toolbar>
 //           </Container>
 //         </AppBar>
@@ -131,12 +112,11 @@
 // export default TopBar;
 
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   AppBar,
   Box,
   IconButton,
-  Stack,
   Typography,
   Toolbar,
   Container,
@@ -144,114 +124,66 @@ import {
   useTheme,
 } from "@mui/material";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { useNavigate } from "react-router-dom";
 
-function TopBar() {
-  const navigate = useNavigate();
-  const [scrolling, setScrolling] = useState(false);
+function TopBar({ scrolling }) {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); // Responsive check
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolling(window.pageYOffset > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  if (scrolling) return null; // Hide when scrolling
 
   return (
-    <>
-      {!scrolling && (
-        <AppBar
-          position="static"
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: "white",
+        p: 0.8,
+        transition: "all 0.1s ease-in-out",
+      }}
+    >
+      <Container>
+        <Toolbar
           sx={{
-            backgroundColor: "white",
-            p:0.8,
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: isMobile ? "column" : "row",
+            textAlign: "center",
+            py: isMobile ? 1 : 0,
           }}
         >
-          <Container>
-            <Toolbar
+          {/* Logo */}
+          <Box sx={{ textAlign: "center" }}>
+            <Typography
+              variant="h1"
               sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexDirection: isMobile ? "column" : "row",
-                textAlign: "center",
-                py: isMobile ? 1 : 0,
+                height: "40px",
+                color: "blue",
+                fontWeight: "bold",
+                fontSize: isMobile ? "1.8rem" : "2.2rem",
+                letterSpacing: "2px",
               }}
             >
-              {/* Logo Section */}
-              <Box sx={{ textAlign: "center" }}>
-                <Typography
-                  variant="h1"
-                  sx={{
-                    height: "40px",
-                    color: "blue",
-                    fontWeight: "bold",
-                  }}
-                >
-                  BPS
-                </Typography>
-              </Box>
+              BPS
+            </Typography>
+          </Box>
 
-              {/* Phone Contact Section */}
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 1,
-                }}
-              >
-                <IconButton sx={{ color: "blue" }}>
-                  <LocalPhoneIcon />
-                </IconButton>
-                <Box
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                  }}
-                >
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "black", fontWeight: "bold" }}
-                  >
-                    CALL US NOW
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    sx={{ color: "blue", fontWeight: "bold" }}
-                  >
-                    +91-6386963004
-                  </Typography>
-                </Box>
-              </Box>
-
-              {/* Social Icons */}
-              {/* <Stack direction="row" spacing={1} sx={{ mt: isMobile ? 1 : 0 }}>
-                <IconButton sx={{ color: "blue" }}>
-                  <FacebookIcon />
-                </IconButton>
-                <IconButton sx={{ color: "blue" }}>
-                  <InstagramIcon />
-                </IconButton>
-                <IconButton sx={{ color: "blue" }}>
-                  <TwitterIcon />
-                </IconButton>
-                <IconButton sx={{ color: "blue" }}>
-                  <LinkedInIcon />
-                </IconButton>
-              </Stack> */}
-            </Toolbar>
-          </Container>
-        </AppBar>
-      )}
-    </>
+          {/* Phone Contact */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <IconButton sx={{ color: "blue" }}>
+              <LocalPhoneIcon />
+            </IconButton>
+            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
+              <Typography variant="body2" sx={{ color: "black", fontWeight: "bold" }}>
+                CALL US NOW
+              </Typography>
+              <Typography variant="body2" sx={{ color: "blue", fontWeight: "bold" }}>
+                +91-6386963004
+              </Typography>
+            </Box>
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 }
 

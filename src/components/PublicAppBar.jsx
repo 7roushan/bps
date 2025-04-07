@@ -1,265 +1,6 @@
-// // import React, { useState } from "react";
 
-// // import {
-// //   AppBar,
-// //   Toolbar,
-// //   Typography,
-// //   Box,
-// //   IconButton,
-// //   Drawer,
-// //   List,
-// //   ListItem,
-// //   ListItemText,
-// //   useMediaQuery,
-// //   Button,
-// //   Menu,
-// //   MenuItem,
-// //   Modal,
-// //   Grid,
-// //   TextField,
-// //   Stack,
-// //   Container,
-// //   colors,
-// // } from "@mui/material";
-// // import { ArrowDropDown, Height, Menu as MenuIcon } from "@mui/icons-material";
-// // import { useTheme } from "@mui/material/styles";
-// // import { Link } from "react-router-dom";
-// // // import IMGLOGO from "../assets/images/logo.png";
-// // import TopBar from "./TopBar";
-// // import Header from "./Header";
 
-// // const navLinks = [
-// //   { to: "/", label: "Home" },
-// //   { to: "/about", label: "About" },
-// //   { to: "/services", label: "Services" },
-// //   { to: "/contact", label: "Contact" },
-// //   // { to: "/ites", label: "Technology" },
-// //   // { to: "/career", label: "Transportation" },
-// //   { to: "/employer", label: "Order" },
-// // ];
-
-// // const PublicAppBar = () => {
-// //   const theme = useTheme();
-// //   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-// //   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-// //   const [drawerOpen, setDrawerOpen] = useState(false);
-// //   const [activeDropdown, setActiveDropdown] = useState(null);
-// //   const [menuAnchor, setMenuAnchor] = useState(null);
-// //   const [open, setOpen] = useState(false);
-
-// //   // Desktop Dropdown Handling
-// //   const handleMenuOpen = (event, index) => {
-// //     setMenuAnchor(event.currentTarget);
-// //     setActiveDropdown(index);
-// //   };
-
-// //   const handleMenuClose = () => {
-// //     setMenuAnchor(null);
-// //     setActiveDropdown(null);
-// //   };
-
-// //   return (
-// //     <>
-// //       <AppBar
-// //         position="fixed"
-// //         sx={{
-
-// //           backgroundColor: "blue-500",
-// //           boxShadow: "none",
-// //           // borderBottom: "1px solid #ddd",
-// //         }}
-// //       >
-// //         <TopBar />
-// //         {/* <Header/> */}
-// //         <Container>
-// //           <Toolbar
-// //             sx={{
-// //               display: "flex",
-// //                minheight: "100px",
-// //               justifyContent: "space-between",
-// //                p: 2,
-// //             }}
-// //           >
-// //           <Box>
-// //               <Typography
-// //                 variant="h1"
-// //                 sx={{
-// //                   height: isSmallScreen ? "40px" : "50px",
-// //                   color: "white",
-// //                   fontWeight: "bold",
-// //                 }}
-// //               >
-// //                 BPS
-// //               </Typography>
-// //             </Box>
-
-// //             {/* Desktop Navigation */}
-// //             {!isMobile && (
-// //               <Box
-// //                 sx={{
-// //                   display: "flex",
-// //                   flexGrow: 1,
-// //                   justifyContent: "center",
-// //                   gap: 6,
-// //                 }}
-// //               >
-// //                 {navLinks.map((link, index) => (
-// //                   <Box key={index} sx={{ position: "relative" }}>
-// //                     {link.dropdown ? (
-// //                       <>
-// //                         <Typography
-// //                           sx={{
-// //                             color: "white",
-// //                             textDecoration: "none",
-// //                             fontSize: "1rem",
-// //                             fontWeight: "bold",
-// //                             cursor: "pointer",
-// //                             display: "flex",
-// //                             alignItems: "center",
-// //                             gap: 0.5,
-// //                             "&:hover": { Color: "#f56960" },
-// //                           }}
-// //                           onMouseEnter={(e) => handleMenuOpen(e, index)}
-// //                         >
-// //                           {link.label}
-// //                           <ArrowDropDown
-// //                             sx={{
-// //                               transform:
-// //                                 activeDropdown === index
-// //                                   ? "rotate(180deg)"
-// //                                   : "rotate(0deg)",
-// //                             }}
-// //                           />
-// //                         </Typography>
-// //                         <Menu
-// //                           anchorEl={menuAnchor}
-// //                           open={activeDropdown === index}
-// //                           onClose={handleMenuClose}
-// //                           onMouseLeave={handleMenuClose}
-// //                           sx={{ mt: 1 }}
-// //                         >
-// //                           {link.dropdown.map((item, subIndex) => (
-// //                             <MenuItem
-// //                               key={subIndex}
-// //                               component={Link}
-// //                               to={item.to}
-// //                               sx={{
-// //                                 backgroundColor: "white",
-// //                                 "&:hover": { backgroundColor: "red" },
-// //                               }}
-// //                               onClick={handleMenuClose}
-// //                             >
-// //                               {item.label}
-// //                             </MenuItem>
-// //                           ))}
-// //                         </Menu>
-// //                       </>
-// //                     ) : (
-// //                       <Typography
-// //                         component={Link}
-// //                         to={link.to}
-// //                         sx={{
-// //                           color: "white",
-// //                           textDecoration: "none",
-// //                           fontSize: "1rem",
-// //                           fontWeight: "bold",
-// //                           "&:hover": { color: "#f56960" },
-// //                         }}
-// //                       >
-// //                         {link.label}
-// //                       </Typography>
-// //                     )}
-// //                   </Box>
-// //                 ))}
-// //               </Box>
-// //             )}
-
-// //             {/* Mobile Menu Icon */}
-// //             {isMobile && (
-// //               <IconButton
-// //                 onClick={() => setDrawerOpen(true)}
-// //                 sx={{ color: "black" }}
-// //               >
-// //                 <MenuIcon />
-// //               </IconButton>
-// //             )}
-// //           </Toolbar>
-// //         </Container>
-// //       </AppBar>
-
-// //       {/* Mobile Drawer */}
-// //       <Drawer
-// //         anchor="left"
-// //         open={drawerOpen}
-// //         onClose={() => setDrawerOpen(false)}
-// //       >
-// //         <List sx={{ width: 250 }}>
-// //           {navLinks.map((link, index) => (
-// //             <Box key={index}>
-// //               <ListItem
-// //                 onClick={() =>
-// //                   setActiveDropdown(activeDropdown === index ? null : index)
-// //                 }
-// //               >
-// //                 <ListItemText>
-// //                   {link.dropdown ? (
-// //                     <Box>
-// //                       <Typography
-// //                         sx={{
-// //                           fontWeight: "bold",
-// //                           cursor: "pointer",
-// //                           color: "#000",
-// //                           "&:hover": { color: "#f56960" },
-// //                         }}
-// //                       >
-// //                         {link.label}
-// //                       </Typography>
-// //                       {activeDropdown === index && (
-// //                         <Box sx={{ pl: 4 }}>
-// //                           {link.dropdown.map((item, subIndex) => (
-// //                             <ListItem key={subIndex} sx={{ pl: 4 }}>
-// //                               <ListItemText>
-// //                                 <Link
-// //                                   to={item.to}
-// //                                   style={{
-// //                                     textDecoration: "none",
-// //                                     color: "#000",
-// //                                   }}
-// //                                   onClick={() => setDrawerOpen(false)}
-// //                                 >
-// //                                   {item.label}
-// //                                 </Link>
-// //                               </ListItemText>
-// //                             </ListItem>
-// //                           ))}
-// //                         </Box>
-// //                       )}
-// //                     </Box>
-// //                   ) : (
-// //                     <Link
-// //                       to={link.to}
-// //                       style={{
-// //                         textDecoration: "none",
-// //                         color: "#000",
-// //                         fontWeight: "bold",
-// //                       }}
-// //                       onClick={() => setDrawerOpen(false)}
-// //                     >
-// //                       {link.label}
-// //                     </Link>
-// //                   )}
-// //                 </ListItemText>
-// //               </ListItem>
-// //             </Box>
-// //           ))}
-// //         </List>
-// //       </Drawer>
-// //     </>
-// //   );
-// // };
-
-// // export default PublicAppBar;
-
+// import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 // import React, { useState, useEffect } from "react";
 // import {
 //   AppBar,
@@ -318,79 +59,123 @@
 //       <AppBar
 //         position="fixed"
 //         sx={{
+        
+//           zIndex: 1200,
 //           backgroundColor: "blue",
 //           boxShadow: "none",
 //         }}
 //       >
 //         <TopBar />
 //         <Container>
-//           <Toolbar
-//             sx={{
-//               display: "flex",
-//               minHeight: "100px",
-//               justifyContent: "space-between",
-//               p: 2,
-//             }}
-//           >
-//             {showHeader && (
-//               <Box>
-//                 <Typography
-//                   variant="h1"
-//                   sx={{
-//                     height: isSmallScreen ? "40px" : "50px",
-//                     color: "white",
-//                     fontWeight: "bold",
-//                   }}
-//                 >
-//                   BPS
-//                 </Typography>
-//               </Box>
-//             )}
 
-//             {!isMobile && (
-//               <Box
-//                 sx={{
-//                   display: "flex",
-//                   flexGrow: 1,
-//                   justifyContent: "center",
-//                   gap: 6,
-//                 }}
-//               >
-//                 {navLinks.map((link, index) => (
-//                   <Typography
-//                     key={index}
-//                     component={Link}
-//                     to={link.to}
-//                     sx={{
-//                       color: "white",
-//                       textDecoration: "none",
-//                       fontSize: "1rem",
-//                       fontWeight: "bold",
-//                       "&:hover": { color: "#f56960" },
-//                     }}
-//                   >
-//                     {link.label}
-//                   </Typography>
-//                 ))}
-//               </Box>
-//             )}
+//         <Toolbar
+//   sx={{
+//     display: "flex",
+//     justifyContent: "space-between",
+//     alignItems: "center",
+//     minHeight: "100px",
+//     px: 2,
+//     backgroundColor: "blue", // Optional: nice dark blue shade
+//     boxShadow: showHeader ? "0 4px 12px rgba(34, 95, 208, 0.2)" : "none",
+//     transition: "all 0.3s ease-in-out",
+//   }}
+// >
+//   {/* Logo */}
+//   <Box sx={{ display: "flex", alignItems: "center" , 
+//         transition: "all 0.3s ease-in-out",
+//         opacity: showHeader ? 1 : 0,
+//         height: showHeader ? "auto" : 0,
+//         overflow: "hidden",
+    
+//   }}>
+//     {(showHeader || !showHeader) && (
+//       <Typography
+//         variant="h1"
+//         sx={{
+//           fontSize: isSmallScreen ? "1.8rem" : "2.2rem",
+//           color: "#fff",
+//           fontWeight: 800,
+//           letterSpacing: "2px",
+//         }}
+//       >
+//         BPS
+//       </Typography>
+//     )}
+//   </Box>
 
-//             {isMobile && (
-//               <IconButton
-//                 onClick={() => setDrawerOpen(true)}
-//                 sx={{ color: "white" }}
-//               >
-//                 <MenuIcon />
-//               </IconButton>
-//             )}
-//           </Toolbar>
+//   {/* Nav Links (Desktop Only) */}
+//   {!isMobile && (
+//     <Box
+//       sx={{
+//         display: "flex",
+//         gap: 5,
+//         justifyContent: "center",
+//         alignItems: "center",
+//         flexGrow: 1,
+//       }}
+//     >
+//       {navLinks.map((link, index) => (
+//         <Typography
+//           key={index}
+//           component={Link}
+//           to={link.to}
+//           onClick={() => window.scrollTo(0, 0)}
+//           sx={{
+//             color: "white",
+//             textDecoration: "none",
+//             fontSize: "1rem",
+//             fontWeight: 600,
+//             position: "relative",
+//             "&:after": {
+//               content: '""',
+//               position: "absolute",
+//               width: "0%",
+//               height: "2px",
+//               bottom: 0,
+//               left: 0,
+//               backgroundColor: "#f56960",
+//               transition: "0.3s",
+//             },
+//             "&:hover:after": {
+//               width: "100%",
+//             },
+//             "&:hover": {
+//               color: "#f56960",
+//             },
+//           }}
+//         >
+//           {link.label}
+//         </Typography>
+//       ))}
+//     </Box>
+//   )}
+
+//   {/* Mobile Menu Icon */}
+//   {isMobile && (
+//     <IconButton onClick={() => setDrawerOpen(true)} sx={{ color: "white" }}>
+//       <MenuIcon fontSize="large" />
+//     </IconButton>
+//   )}
+//         </Toolbar>
+
+
 //         </Container>
 //       </AppBar>
 
-//       <Drawer anchor="left" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+//       <Drawer
+//         anchor="left"
+//         open={drawerOpen}
+//         onClose={() => setDrawerOpen(false)}
+//       >
 //         <List sx={{ width: 250 }}>
 //           {navLinks.map((link, index) => (
-//             <ListItem key={index} onClick={() => setDrawerOpen(false)}>
+//             <ListItem
+//               key={index}
+//               onClick={() => {
+//                 setDrawerOpen(false);
+//                 window.scrollTo(0, 0); // Scroll to top on click
+//               }}
+//             >
 //               <ListItemText>
 //                 <Link
 //                   to={link.to}
@@ -413,7 +198,6 @@
 
 // export default PublicAppBar;
 
-import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import React, { useState, useEffect } from "react";
 import {
   AppBar,
@@ -427,10 +211,8 @@ import {
   ListItemText,
   useMediaQuery,
   Container,
-  Menu,
-  MenuItem,
 } from "@mui/material";
-import { ArrowDropDown, Menu as MenuIcon } from "@mui/icons-material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
 import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
@@ -448,19 +230,21 @@ const PublicAppBar = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const [menuAnchor, setMenuAnchor] = useState(null);
+  const [scrolling, setScrolling] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY < lastScrollY) {
-        setShowHeader(false);
-      } else {
+      const currentScroll = window.scrollY;
+      setScrolling(currentScroll > 10);
+
+      if (currentScroll = lastScrollY) {
         setShowHeader(true);
+      } else {
+        setShowHeader(false);
       }
-      setLastScrollY(window.scrollY);
+      setLastScrollY(currentScroll);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -472,36 +256,44 @@ const PublicAppBar = () => {
       <AppBar
         position="fixed"
         sx={{
+          zIndex: 1200,
           backgroundColor: "blue",
           boxShadow: "none",
         }}
       >
-        <TopBar />
+        <TopBar scrolling={scrolling} />
         <Container>
           <Toolbar
             sx={{
               display: "flex",
-              minHeight: "100px",
               justifyContent: "space-between",
-              p: 1.2,
+              alignItems: "center",
+              minHeight: "100px",
+              px: 2,
+              backgroundColor: "blue",
+              boxShadow: showHeader ? "0 4px 12px rgba(34, 95, 208, 0.2)" : "none",
+              transition: "all 0.3s ease-in-out",
             }}
           >
-            {showHeader && (
+            {/* Logo - only when scrolling */}
+            {scrolling && (
               <Box
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "space-between", // Ensures spacing between logo & contact
-                  width: "100%", // Takes full width to avoid wrapping
+                  transition: "all 0.3s ease-in-out",
+                  opacity: showHeader ? 1 : 0,
+                  height: showHeader ? "auto" : 0,
+                  overflow: "hidden",
                 }}
               >
-                {/* Logo */}
                 <Typography
                   variant="h1"
                   sx={{
-                    height: isSmallScreen ? "40px" : "50px",
-                    color: "white",
-                    fontWeight: "bold",
+                    fontSize: isSmallScreen ? "1.8rem" : "2.2rem",
+                    color: "#fff",
+                    fontWeight: 800,
+                    letterSpacing: "2px",
                   }}
                 >
                   BPS
@@ -509,13 +301,15 @@ const PublicAppBar = () => {
               </Box>
             )}
 
+            {/* Nav Links (Desktop Only) */}
             {!isMobile && (
               <Box
                 sx={{
                   display: "flex",
-                  flexGrow: 1,
+                  gap: 5,
                   justifyContent: "center",
-                  gap: 6,
+                  alignItems: "center",
+                  flexGrow: 1,
                 }}
               >
                 {navLinks.map((link, index) => (
@@ -523,13 +317,29 @@ const PublicAppBar = () => {
                     key={index}
                     component={Link}
                     to={link.to}
-                    onClick={() => window.scrollTo(0, 0)} // Scroll to top on click
+                    onClick={() => window.scrollTo(0, 0)}
                     sx={{
                       color: "white",
                       textDecoration: "none",
                       fontSize: "1rem",
-                      fontWeight: "bold",
-                      "&:hover": { color: "#f56960" },
+                      fontWeight: 600,
+                      position: "relative",
+                      "&:after": {
+                        content: '""',
+                        position: "absolute",
+                        width: "0%",
+                        height: "2px",
+                        bottom: 0,
+                        left: 0,
+                        backgroundColor: "#f56960",
+                        transition: "0.3s",
+                      },
+                      "&:hover:after": {
+                        width: "100%",
+                      },
+                      "&:hover": {
+                        color: "#f56960",
+                      },
                     }}
                   >
                     {link.label}
@@ -538,59 +348,17 @@ const PublicAppBar = () => {
               </Box>
             )}
 
+            {/* Mobile Menu Icon */}
             {isMobile && (
-              <IconButton
-                onClick={() => setDrawerOpen(true)}
-                sx={{ color: "white" }}
-              >
-                <MenuIcon />
+              <IconButton onClick={() => setDrawerOpen(true)} sx={{ color: "white" }}>
+                <MenuIcon fontSize="large" />
               </IconButton>
             )}
-
-            {/* Contact Section */}
-            {/* <Box
-              sx={{
-                display: "flex",
-                alignItems: "center", // Ensures icon and text are vertically aligned
-              }}
-            >
-              <IconButton sx={{ color: "white" }}>
-                <LocalPhoneIcon />
-              </IconButton>
-              <Box
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center", // Centers text in relation to the icon
-                  justifyContent: "center", // Ensures even spacing
-                }}
-              >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "white",
-                    fontWeight: "bold",
-                    textAlign: "center",
-                  }}
-                >
-                  CALL US NOW
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "white",
-                    fontWeight: "bold",
-                    textAlign: "center",
-                  }}
-                >
-                  +91-6386963004
-                </Typography>
-              </Box>
-            </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
 
+      {/* Drawer for mobile */}
       <Drawer
         anchor="left"
         open={drawerOpen}
@@ -602,7 +370,7 @@ const PublicAppBar = () => {
               key={index}
               onClick={() => {
                 setDrawerOpen(false);
-                window.scrollTo(0, 0); // Scroll to top on click
+                window.scrollTo(0, 0);
               }}
             >
               <ListItemText>
@@ -626,4 +394,5 @@ const PublicAppBar = () => {
 };
 
 export default PublicAppBar;
+
 
