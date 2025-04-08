@@ -32,7 +32,8 @@ import Readyto from "../Designe/Readyto";
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(4),
   borderRadius: theme.spacing(3),
-  background: "linear-gradient(145deg,rgb(192, 219, 254),rgb(93, 137, 196))",
+  // background: "linear-gradient(145deg,rgb(192, 219, 254),rgb(93, 137, 196))",
+  background: "#dbeafe",
   boxShadow: "0 8px 32px rgba(14, 12, 12, 0.1)",
   position: "relative",
   overflow: "hidden",
@@ -101,7 +102,6 @@ const RoundedTextField = styled(TextField)(({ theme }) => ({
     width: "100%",
     textAlign: "left",
   },
-
 }));
 
 const AddressSection = ({ title, prefix }) => (
@@ -228,7 +228,7 @@ const Order = () => {
           backgroundPosition: "center",
           display: "flex",
           alignItems: "center",
-          justifyContent:"center",
+          justifyContent: "center",
           "&:after": {
             content: '""',
             position: "absolute",
@@ -259,7 +259,7 @@ const Order = () => {
               fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
               textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
               textAlign: "center",
-              justifyContent:"center",
+              justifyContent: "center",
             }}
           >
             Make Your Booking
@@ -267,8 +267,7 @@ const Order = () => {
         </Box>
       </Box>
 
-      <Box backgroundColor="#dbeafe" sx={{ p: { md: 20 } }}>
-
+      <Box backgroundColor="" sx={{ p: { md: 20 } }}>
         <StyledPaper>
           <Typography
             variant="h4"
@@ -315,15 +314,80 @@ const Order = () => {
                 </Grid>
               ))}
 
-              {/* Date Fields */}
-              {["Booking Date", "Delivery Date"].map((label) => (
+             
+              {/* {["Booking Date", "Delivery Date"].map((label) => (
                 <Grid item xs={12} sm={6} key={label}>
                   <RoundedTextField
                     fullWidth
                     type="date"
                     label={label}
                     name={label.replace(/ /g, "")}
+                    variant="outlined"
                     InputLabelProps={{ shrink: true }}
+                    placeholder="dd-mm-yyyy"
+                    sx={{
+                      backgroundColor: "rgba(255, 255, 255, 0.08)",
+                      borderRadius: 2,
+                      input: {
+                        color: "black",
+                        padding: "12px",
+                        borderRadius: 2,
+                        textAlign: "center", // center the text
+                      },
+                      label: {
+                        color: "rgb(60, 53, 53)",
+                      },
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "rgba(52, 30, 30, 0.79)",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "black",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "primary.main",
+                        },
+                      },
+                    }}
+                    onFocus={(e) => e.target.showPicker?.()} // for browser compatibility
+                  />
+                </Grid>
+              ))} */}
+
+              {["Booking Date", "Delivery Date"].map((label) => (
+                <Grid item xs={12} sm={6} key={label}>
+                  <Typography variant="subtitle1" fontWeight={700} gutterBottom>
+                    {label}
+                  </Typography>
+                  <RoundedTextField
+                    fullWidth
+                    type="date"
+                    name={label.replace(/ /g, "")}
+                    variant="outlined"
+                    InputLabelProps={{ shrink: true }}
+                    placeholder="dd-mm-yyyy"
+                    sx={{
+                      backgroundColor: "rgba(255, 255, 255, 0.08)",
+                      borderRadius: 2,
+                      input: {
+                        color: "black",
+                        padding: "12px",
+                        borderRadius: 2,
+                        textAlign: "center",
+                      },
+                      "& .MuiOutlinedInput-root": {
+                        "& fieldset": {
+                          borderColor: "rgba(52, 30, 30, 0.79)",
+                        },
+                        "&:hover fieldset": {
+                          borderColor: "black",
+                        },
+                        "&.Mui-focused fieldset": {
+                          borderColor: "primary.main",
+                        },
+                      },
+                    }}
+                    onFocus={(e) => e.target.showPicker?.()}
                   />
                 </Grid>
               ))}

@@ -373,7 +373,7 @@ const TrackingPage = () => {
       sx={{
         pt: 5,
         px: 3,
-        mb:10,
+        mb:8,
         background: "linear-gradient(135deg, rgba(54, 211, 232, 0.95) 0%, rgba(53, 65, 136, 0.95) 100%)",
         boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)",
         position: 'relative',
@@ -392,6 +392,7 @@ const TrackingPage = () => {
         }
       }}
     >
+     
       <Box position="relative" zIndex={1}>
         <Typography
           variant="h1"
@@ -477,6 +478,8 @@ const TrackingPage = () => {
           ))}
         </Grid>
       </Box>
+     
+
     </Box>
   );
 };
