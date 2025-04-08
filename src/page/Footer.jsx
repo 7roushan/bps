@@ -13,7 +13,7 @@ const Footer = () => {
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "space-between",
-          px: 2,
+          
         }}
       >
         {/* CEO Statement Section */}
@@ -97,8 +97,7 @@ const Footer = () => {
             DesignThemes
           </Link>
         </Typography>
-        <Box component="ul" sx={{ listStyle: "none", p: 0, display: "flex",  maxWidth: 1250,
-          mx: "auto", justifyContent: "center", gap: 2, mt: 1 }}>
+        <Box component="ul" sx={{ listStyle: "none", p: 0, display: "flex",  justifyContent: "center", gap: 2, mt: 1 }}>
           {["Terms of Use", "Legal Disclaimer", "Privacy Policy", "Support", "Sitemap"].map((text) => (
             <ListItem key={text} sx={{ display: "inline", p: 0 }}>
               <Link href="#" color="inherit" underline="none">
