@@ -136,18 +136,18 @@ function TopBar({ scrolling }) {
       position="static"
       sx={{
         backgroundColor: "white",
-        p: 0.8,
+      
         transition: "all 0.1s ease-in-out",
       }}
     >
-      <Container>
+      <Box px={10}>
         <Toolbar
           sx={{
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
             flexDirection: isMobile ? "column" : "row",
-            textAlign: "center",
+            textAlign: "Start",
             py: isMobile ? 1 : 0,
           }}
         >
@@ -182,7 +182,7 @@ function TopBar({ scrolling }) {
             </Box>
           </Box>
         </Toolbar>
-      </Container>
+      </Box>
     </AppBar>
   );
 }

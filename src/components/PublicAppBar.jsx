@@ -262,14 +262,14 @@ const PublicAppBar = () => {
         }}
       >
         <TopBar scrolling={scrolling} />
-        <Container>
+        <Box px={10}>
           <Toolbar
             sx={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
               minHeight: "100px",
-              px: 2,
+              
               backgroundColor: "blue",
               boxShadow: showHeader ? "0 4px 12px rgba(34, 95, 208, 0.2)" : "none",
               transition: "all 0.3s ease-in-out",
@@ -355,7 +355,7 @@ const PublicAppBar = () => {
               </IconButton>
             )}
           </Toolbar>
-        </Container>
+        </Box>
       </AppBar>
 
       {/* Drawer for mobile */}

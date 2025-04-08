@@ -163,8 +163,8 @@ function LandingPage() {
         justifyContent: "center",
         backgroundImage: `
           linear-gradient(135deg, 
-            rgba(167, 173, 185, 0.85) 0%, 
-            rgba(67, 122, 185, 0.85) 100%),
+            rgba(118, 136, 202, 0.41) 0%, 
+            rgba(152, 155, 158, 0.85)00%),
           url(${img1})
         `,
         backgroundSize: "cover",
@@ -204,7 +204,7 @@ function LandingPage() {
               md: "4rem",
               lg: "4rem"
             },
-            textShadow: "4px 4px 8px rgba(0,0,0,0.6)",
+            textShadow: "4px 4px 8px rgba(48, 41, 41, 0.6)",
             mb: 3,
             background: "linear-gradient(45deg,rgb(232, 236, 20) 30%,rgb(236, 214, 214) 90%)",
             WebkitBackgroundClip: "text",
@@ -254,7 +254,7 @@ function LandingPage() {
             placeholder="Enter tracking ID"
             InputProps={{
               sx: {
-                backgroundColor: "rgba(255,255,255,0.15)",
+                backgroundColor: "rgba(213, 205, 205, 0.15)",
                 borderRadius: "50px",
                 color: "white",
                 "& .MuiOutlinedInput-notchedOutline": {

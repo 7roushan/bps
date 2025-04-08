@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Button, Container, Grid } from "@mui/material";
-import warehouseImg from "../../assets/image1/warehouse.jpg";
+import warehouseImg from "../../assets/image1/warehouse.png";
 import truckImg from "../../assets/image1/truck2.jpg";
 import portImg from "../../assets/image1/port.jpg";
 import WelcomeSection from "../home/WelcomeSection";
@@ -40,10 +40,10 @@ function LandingPage2() {
       <Box
         sx={{
           position: "relative",
-          height: { xs: "60vh", md: "80vh" },
+          height: { xs: "60vh", md: "70vh" },
           backgroundImage: `url(${warehouseImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center top",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -83,7 +83,7 @@ function LandingPage2() {
           >
             Delivering reliable solutions for all your transportation needs
           </Typography>
-          <Button
+          {/* <Button
             variant="contained"
             size="large"
             sx={{
@@ -95,7 +95,7 @@ function LandingPage2() {
             }}
           >
             Get Started
-          </Button>
+          </Button> */}
         </Container>
       </Box>
 

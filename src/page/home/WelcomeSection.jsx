@@ -1,228 +1,4 @@
-// import { Box, Typography, Divider, Container, Grid } from "@mui/material";
-// import { styled } from "@mui/system";
-// import img from "../../assets/image1/book.png";
 
-// const QuoteText = styled(Typography)(({ theme }) => ({
-//   position: "relative",
-//   paddingLeft: theme.spacing(4),
-//   "&:before": {
-//     content: '"\\201C"',
-//     position: "absolute",
-//     left: 0,
-//     top: "-0.4em",
-//     fontSize: "4rem",
-//     color: theme.palette.text?.secondary || "#666666",
-//   },
-// }));
-
-// const WelcomeSection = () => {
-//   return (
-//     <Box sx={{ py: 8, bgcolor: "background.paper" }}>
-//       <Container maxWidth="md">
-//         <Grid container spacing={6}>
-//           <Grid item xs={12} md={6}>
-//             <img 
-//               src={img} 
-//               alt="Welcome" 
-//               style={{ 
-//                 width: "100%", 
-//                 height: "auto",
-//                 borderRadius: "8px" 
-//               }}
-//             />
-//           </Grid>
-          
-//           <Grid item xs={12} md={6}>
-//             <Typography variant="h3" gutterBottom>
-//               Welcome to
-//               <Box
-//                 component="span"
-//                 sx={{
-//                   display: "block",
-//                   color: "primary.main",
-//                   textTransform: "uppercase",
-//                   fontSize: "inherit",
-//                 }}
-//               >
-//                 Logistics International
-//               </Box>
-//             </Typography>
-
-//             <Typography variant="body1" paragraph sx={{ mb: 3 }}>
-//               Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-//               turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere
-//               a, pede. Donec nec justo eget felis facilisis fermentum. Aliquam
-//               porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-//             </Typography>
-
-//             <Typography variant="body1" paragraph sx={{ mb: 3 }}>
-//               Morbi in sem quis dui placerat ornare. Pellentesque odio nisl, euismod
-//               in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.
-//             </Typography>
-//           </Grid>
-
-//           <Grid item xs={12}>
-//             <QuoteText
-//               variant="body1"
-//               sx={{
-//                 fontStyle: "italic",
-//                 mb: 4,
-//                 color: (theme) => theme.palette.text?.secondary || "#666666",
-//               }}
-//             >
-//               Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-//               fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
-//               sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-//               sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
-//               tempora incidunt ut labore et dolore magnam aliquam.
-//             </QuoteText>
-
-//             <Divider
-//               sx={{
-//                 my: 6,
-//                 borderColor: (theme) =>
-//                   theme.palette.divider || "rgba(0, 0, 0, 0.12)",
-//               }}
-//             />
-
-//             <Typography
-//               variant="h6"
-//               align="center"
-//               sx={{
-//                 textTransform: "uppercase",
-//                 fontWeight: "bold",
-//                 letterSpacing: "1px",
-//                 color: "primary.main",
-//               }}
-//             >
-//               Join us we cover the whole world
-//             </Typography>
-//           </Grid>
-//         </Grid>
-//       </Container>
-//     </Box>
-//   );
-// };
-
-// export default WelcomeSection;
-
-
-
-
-// import { Box, Typography, Divider, Container, Grid,useMediaQuery } from "@mui/material";
-// import { styled } from "@mui/system";
-// import img from "../../assets/image1/book.png";
-// import { useTheme } from "@mui/material/styles";
-// const QuoteText = styled(Typography)(({ theme }) => ({
-//   position: "relative",
-//   paddingLeft: theme.spacing(4),
-//   "&:before": {
-//     content: '"\\201C"',
-//     position: "absolute",
-//     left: 0,
-//     top: "-0.4em",
-//     fontSize: "4rem",
-//     color: theme.palette.text?.secondary || "#666666",
-//   },
-// }));
-
-// const WelcomeSection = () => {
-//   const theme = useTheme();
-//   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-//   return (
-//     <Box sx={{ py:5, bgcolor: "background.paper", px: { xs: 2, sm: 4, md: 10, lg: 15 } }}>
-      
-//         <Grid container spacing={6}>
-//           <Grid item xs={12} md={6}>
-//             <img 
-//               src={img} 
-//               alt="Welcome" 
-//               style={{ 
-//                 width: "400px", 
-              
-//                 borderRadius: "8px" 
-//               }}
-//             />
-//           </Grid>
-          
-//           <Grid item xs={12} md={6}>
-//           <Typography
-//           fontSize={22}
-//       variant={isSmallScreen ? "h4" : "h3"} // Adjust size based on screen width
-//       gutterBottom
-//       sx={{
-//         textAlign: isSmallScreen ? "center" : "left",
-//         fontWeight: "bold",
-      
-//       }}
-//     >
-//       Welcome to
-//       <Box
-//         component="span"
-//         sx={{
-//           display: "block",
-//           color: "primary.main",
-//           textTransform: "uppercase",
-//           fontSize: "inherit", // Inherits font size dynamically
-//         }}
-//       >
-//         Bharat Parcel
-//       </Box>
-//     </Typography>
-
-//             <Typography variant="body1" paragraph sx={{ mb: 3 }}>
-//           Bharat Parcel – Delivering Trust, One Parcel at a Time! 🚛📦
-
-
-//             </Typography>
-
-//             <Typography variant="body1" paragraph sx={{ mb: 3 }}>
-//             At Bharat Parcel, we believe in making logistics simple, fast, and reliable. Whether you're shipping across cities or tracking an important delivery, we ensure your parcels reach their destination safely and on time. With advanced tracking, secure handling, and a commitment to excellence, we bridge the distance between you and your shipments.
-
-
-//             </Typography>
-//           </Grid>
-
-//           <Grid item xs={12} md={6}>
-//             {/* <QuoteText
-//               variant="body1"
-//               sx={{
-//                 fontStyle: "italic",
-//                 mb: 4,
-//                 color: (theme) => theme.palette.text?.secondary || "#666666",
-//               }}
-//             >
-//               Experience seamless logistics with Bharat Parcel – because your trust drives us forward! 🚀✨
-//             </QuoteText> */}
-
-//             {/* <Divider
-//               sx={{
-//                 my: 6,
-//                 borderColor: (theme) =>
-//                   theme.palette.divider || "rgba(0, 0, 0, 0.12)",
-//               }}
-//             />
-
-//             <Typography
-//               variant="h6"
-//               align="center"
-//               sx={{
-//                 textTransform: "uppercase",
-//                 fontWeight: "bold",
-//                 letterSpacing: "1px",
-//                 color: "primary.main",
-//               }}
-//             >
-//               Join us we cover the whole world
-//             </Typography> */}
-//           </Grid>
-//         </Grid>
-     
-//     </Box>
-//   );
-// };
-
-// export default WelcomeSection;
 
 
 import { Box, Typography, Container, Grid, useMediaQuery, Button } from "@mui/material";
@@ -246,7 +22,7 @@ const float = keyframes`
 
 const StyledImage = styled('img')(({ theme }) => ({
   width: '100%',
-  maxWidth: '500px',
+  maxWidth: '400px',
   borderRadius: '16px',
   boxShadow: theme.shadows[10],
   position: 'relative',
@@ -283,7 +59,8 @@ const WelcomeSection = () => {
 
   return (
     <Box sx={{ 
-      py: 10, 
+     py:8,
+     px:3,
       bgcolor: 'background.default',
       position: 'relative',
       overflow: 'hidden',
@@ -300,8 +77,8 @@ const WelcomeSection = () => {
         opacity: 0.3
       }
     }}>
-      <Container maxWidth="xl">
-        <Grid container spacing={6} alignItems="center">
+      <Box px={10}>
+        <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={6} sx={{ position: 'relative' }}>
             <StyledImage 
               src={img} 
@@ -413,7 +190,7 @@ const WelcomeSection = () => {
             </Button>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </Box>
   );
 };

@@ -5,7 +5,7 @@ import { Box, Typography, List, ListItem, Link, TextField, Button, Divider } fro
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ bgcolor: "#333", color: "#fff", py: 3 }}>
+    <Box component="footer" sx={{ bgcolor: "#333", color: "#fff", py:2 }}>
       <Box
         sx={{
           maxWidth: 1200,
@@ -18,7 +18,7 @@ const Footer = () => {
       >
         {/* CEO Statement Section */}
         <Box sx={{ width: { xs: "100%", md: "30%" }, mb: 3 }}>
-          <Typography variant="h6" sx={{ borderBottom: "2px solid #fff", pb: 1 }}>
+          <Typography variant="h1" sx={{ borderBottom: "2px solid #fff", pb: 1 }}>
            BPS 
           </Typography>
           <Typography variant="body2" sx={{ pr: 4, textAlign: "justify" }}>
@@ -97,7 +97,8 @@ const Footer = () => {
             DesignThemes
           </Link>
         </Typography>
-        <Box component="ul" sx={{ listStyle: "none", p: 0, display: "flex", justifyContent: "center", gap: 2, mt: 1 }}>
+        <Box component="ul" sx={{ listStyle: "none", p: 0, display: "flex",  maxWidth: 1250,
+          mx: "auto", justifyContent: "center", gap: 2, mt: 1 }}>
           {["Terms of Use", "Legal Disclaimer", "Privacy Policy", "Support", "Sitemap"].map((text) => (
             <ListItem key={text} sx={{ display: "inline", p: 0 }}>
               <Link href="#" color="inherit" underline="none">

@@ -179,7 +179,7 @@ const Card = () => {
   };
 
   return (
-    <Box sx={{ px: { xs: 2, sm: 4, md: 10 }, py: 5 }}>
+    <Box sx={{ px: { xs: 2, sm: 8, md: 13 }, py: 5 }}>
       <Typography
         variant="h3"
         align="center"

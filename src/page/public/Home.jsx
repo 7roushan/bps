@@ -17,6 +17,7 @@ import LogisticsSection from "../home/LogisticsSection";
 import TrackingPage from "../home/TrackingPage ";
 import Card from "./Card";
 import Readyto from "../Designe/Readyto";
+import { Container } from "@mui/material";
 
 function Home() {
   return (
@@ -34,16 +35,20 @@ function Home() {
       <Googlemap/> */}
 
       <LandingPage />
-      <WelcomeSection />
+     
+       <WelcomeSection />
       <Portfolio /> 
+
+      <Card />
+      <WarehouseSection />
+      <TrackingPage />
+
       {/* <MostVisit/> */}
 
       {/* <LogisticsSection /> */}
 
       
-      <Card />
-      <WarehouseSection />
-      <TrackingPage />
+
       <Readyto/>
     </>
   );
